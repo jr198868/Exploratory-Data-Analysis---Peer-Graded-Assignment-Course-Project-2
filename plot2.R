@@ -1,7 +1,7 @@
 # Subset NEI data by Baltimore's fip.
 Baltimore_NEI <- NEI[NEI$fips=="24510",]
 
-# Aggregate using sum the Baltimore emissions data by year
+#Summing the Baltimore emissions data by year
 Baltimore_Emissions <- aggregate(Emissions ~ year, Baltimore_NEI,sum)
 
 png("plot2.png",width=480,height=480,units="px",bg="transparent")
