@@ -1,10 +1,10 @@
 # Gather the subset of the NEI data 
 Vehicles <- grepl("vehicle", SCC$SCC.Level.Two, ignore.case=TRUE)
-Vehicles_SCC <- SCC[vehicles,]$SCC
-Vehicles_NEI <- NEI[NEI$SCC %in% vehiclesSCC,]
+Vehicles_SCC <- SCC[Vehicles,]$SCC
+Vehicles_NEI <- NEI[NEI$SCC %in% Vehicles_SCC,]
 
 # Subset the vehicles NEI data by each city's fip
-Vehicles_Baltimore_NEI <- Vehicles_NEI[vehiclesNEI$fips=="24510",]
+Vehicles_Baltimore_NEI <- Vehicles_NEI[vehicles_NEI$fips=="24510",]
 Vehicles_Baltimore_NEI$city <- "Baltimore City"
 
 Vehicles_LANEI <- Vehicles_NEI[Vehicles_NEI$fips=="06037",]
